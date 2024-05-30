@@ -22,7 +22,7 @@ const Page = () => {
             const response = await axios.post("/api/users/login", user)
             console.log("Signup success", response.data);
             if(response.data.status === 400){
-                alert("Invalid credential"  );
+                toast.error("Invalid credential"  );
                 throw new Error(response.data.message)
             }
 
@@ -65,7 +65,7 @@ const Page = () => {
             type="password" />
 
             <button
-            onClick={!buttonDisabled?onLogin:()=>alert("Fill data first")}
+            onClick={!buttonDisabled?onLogin:()=>toast.error("Fill data first")}
             className='p-2 border border-gray-400 rounded-lg mb-4 focus:outline-none focus:border-gray-700'
             >
                 {buttonDisabled ? "No Login":"Login"}

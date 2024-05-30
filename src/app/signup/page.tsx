@@ -71,7 +71,7 @@ const Page = () => {
             type="password" />
 
             <button
-            onClick={!buttonDisabled?onSignUp:()=>alert("Fill data first")}
+            onClick={!buttonDisabled?onSignUp:()=>toast.error("Fill data first")}
             className='p-2 border border-gray-400 rounded-lg mb-4 focus:outline-none focus:border-gray-700'
             >
                 {buttonDisabled ? "No signup":"Signup"}
